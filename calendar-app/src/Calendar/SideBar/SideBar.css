@@ -1,23 +1,23 @@
-.title{
-    color: black;
-    font-size: 3cqh;
+.side-bar-header-title{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serifs;
-    text-align: center;
-    border: 2px solid gray;
-    margin-bottom: 5rem;
+    font-size: 2.5rem;
+}
+
+.side-bar-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .calendar{
     width: 100%;
     aspect-ratio: 1/1;
-    border:2px solid gray;
     box-sizing: border-box;
 }
 
 .progress{
     width: 100%;
     min-height: 20rem;
-    border:2px solid gray;
     box-sizing: border-box;
 }
 
@@ -47,7 +47,6 @@
     width:auto;
     aspect-ratio: 10/9;
     margin: 1rem 1rem;
-    border: 2px black solid;
     display: flex;
     flex-direction: column;
 }
@@ -98,7 +97,6 @@
 }
 
 .progress-list-item{
-    border:2px solid black;
     padding: 0.5rem 1.5rem;
     display:flex;
     align-items: center;

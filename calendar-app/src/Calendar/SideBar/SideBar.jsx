@@ -4,7 +4,9 @@ function SideBar(){
     return(
         <>
             <div className="side-bar">
-                <div className="side-bar-header"></div>
+                <div className="side-bar-header">
+                    <h1 className="side-bar-header-title">Active Time Tracker</h1>
+                </div>
                 <div className="calendar">
                     <div className="calendar-header">
                         <div className="calendar-date">{`November 2025`}</div>

@@ -16,12 +16,10 @@ body{
     min-width: 23rem;
     width: 20vw;
     height: 100vh;
-    border: 3px solid black;
     box-sizing: border-box;
 }
 
 .side-bar-header{
-    border: 3px solid black;
     height:10vh;
 }
 
