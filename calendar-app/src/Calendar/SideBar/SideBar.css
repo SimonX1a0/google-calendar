@@ -1,0 +1,22 @@
+.side-bar-title{
+    color: black;
+    font-size: 3cqh;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serifs;
+    text-align: center;
+    border: 2px solid gray;
+    margin-bottom: 5rem;
+}
+
+.side-bar-calendar-grids{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border:2px solid gray;
+    box-sizing: border-box;
+}
+
+.side-bar-progress{
+    width: 100%;
+    min-height: 20rem;
+    border:2px solid gray;
+    box-sizing: border-box;
+}
