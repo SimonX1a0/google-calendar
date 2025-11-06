@@ -3,7 +3,7 @@ import "./SideBar.css"
 function SideBar(){
     return(
         <>
-            <div className="side-bar"></div>
+            <div className="side-bar">Side bar</div>
         </>
     );
 }

@@ -1,0 +1,27 @@
+html{
+    font-size: 62.5%;
+    margin:0;
+    padding:0;
+}
+
+body{
+    margin:0;
+}
+
+.calendar{
+    display:flex;
+}
+
+.side-bar{
+    width: 20vw;
+    height: 100vh;
+    border: 3px solid black;
+    box-sizing: border-box;
+}
+
+.dates{
+    width: 80vw;
+    height: 100vh;
+    border: 3px solid black;
+    box-sizing: border-box;
+}
