@@ -1,6 +1,10 @@
 function Dates(){
     return(
-        <div className="dates">Dates</div>
+        <div className="dates">
+            <div className="dates-header">
+                <h1></h1>
+            </div>
+        </div>
     )
 }
 

@@ -12,24 +12,22 @@ body{
     display: flex;
 }
 
-.header{
-    width:100vw;
-    height:10vh;
+.side-bar{
+    min-width: 23rem;
+    width: 20vw;
+    height: 100vh;
     border: 3px solid black;
     box-sizing: border-box;
-
 }
 
-.side-bar{
-    width: 20vw;
-    height: 90vh;
+.side-bar-header{
     border: 3px solid black;
-    box-sizing: border-box;
+    height:10vh;
 }
 
 .dates{
     width: 90vw;
-    height: 90vh;
+    height: 100vh;
     border: 3px solid black;
     box-sizing: border-box;
 }

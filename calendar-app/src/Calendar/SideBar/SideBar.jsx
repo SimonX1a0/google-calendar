@@ -4,6 +4,7 @@ function SideBar(){
     return(
         <>
             <div className="side-bar">
+                <div className="side-bar-header"></div>
                 <div className="calendar">
                     <div className="calendar-header">
                         <div className="calendar-date">{`November 2025`}</div>
@@ -76,11 +77,27 @@ function SideBar(){
                     </div>
                 </div>
                 <div className="progress">
-                    <div className="progress-title">
-                        <span>Tasks</span>
-                        <button><i class='bx bx-plus'></i></button>
+                    <div className="progress-header">
+                        <span className="progress-title">Tasks</span>
+                        <button className="progress-btn"><i class='bx bx-plus'></i></button>
                     </div>
-
+                    <div className="progress-list">
+                        <div className="progress-list-item">
+                            <span className="start-btn"><i class='bx bx-play'></i></span>
+                            <span className="list-item-title">Running</span>
+                            <span className="list-item-time">{`00:00`}</span>
+                        </div>
+                        <div className="progress-list-item">
+                            <span className="start-btn"><i class='bx bx-play'></i></span>
+                            <span className="list-item-title">Running</span>
+                            <span className="list-item-time">{`00:00`}</span>
+                        </div>
+                        <div className="progress-list-item">
+                            <span className="start-btn"><i class='bx bx-play'></i></span>
+                            <span className="list-item-title">Running</span>
+                            <span className="list-item-time">{`00:00`}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
