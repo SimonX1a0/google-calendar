@@ -10,8 +10,8 @@ function Axis(){
     return(
         <div className={style.axis}>
             <div></div>
-            {times.map((time)=>(
-                <div><span>{time}</span></div>
+            {times.map((time, idx)=>(
+                <div key={idx}><span>{time}</span></div>
             ))}
         </div>
     );
