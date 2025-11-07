@@ -1,0 +1,12 @@
+.dates-header{
+    height: 10%;
+    border:2px solid black;
+    box-sizing: border-box;
+}
+
+.Dates-calendar-grids{
+    height:90%;
+    border-radius: 4rem;
+    background-color: rgb(207, 196, 196);
+    box-sizing: border-box;
+}

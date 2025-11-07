@@ -8,9 +8,10 @@ body{
     margin:0;
 }
 
-.calendar-body{
+.calendar{
     display: flex;
 }
+
 
 .side-bar{
     min-width: 23rem;
