@@ -3,7 +3,7 @@
     border-radius: 2.5rem;
     background-color: rgb(207, 196, 196);
     box-sizing: border-box;
-    padding: 0 1rem;
+    padding: 0 0rem;
     display:flex;
     flex-direction: column;
     overflow:scroll;
@@ -13,9 +13,8 @@
 
 .calendar .main{
     display:flex;
-    margin: 0 2rem;
+    margin: 0 0rem;
     width:auto;
-    border: 1px solid black;
     box-sizing: border-box;
 }
 
