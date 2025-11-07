@@ -3,7 +3,7 @@ import Dates from "./Dates/Dates.jsx"
 function Calendar(){
     return(
         <>
-            <div className="calendar">
+            <div className="calendar-app">
                 <SideBar></SideBar>
                 <Dates></Dates>
             </div>

@@ -10,7 +10,7 @@ function Dates(){
             </div>
             <div className="calendar">
                 <div className="header">
-                    <div>
+                    <div className="time-zone">
                         <span>GMT-05</span>
                     </div>
                     <div className="day">SUN</div>
@@ -21,8 +21,32 @@ function Dates(){
                     <div className="day">FRI</div>
                     <div className="day">SAT</div>
                 </div> 
-                <div className="body">
-                    <div className="column"></div>
+                <div className="main">
+                    <div className="axis">
+                        <div>1am</div>
+                        <div>2am</div>
+                        <div>3am</div>
+                        <div>4am</div>
+                        <div>5am</div>
+                        <div>6am</div>
+                        <div>7am</div>
+                        <div>8am</div>
+                        <div>9am</div>
+                        <div>10am</div>
+                        <div>11am</div>
+                        <div>12pm</div>
+                        <div>1pm</div>
+                        <div>2pm</div>
+                        <div>3pm</div>
+                        <div>4pm</div>
+                        <div>5pm</div>
+                        <div>6pm</div>
+                        <div>7pm</div>
+                        <div>8pm</div>
+                        <div>9pm</div>
+                        <div>10pm</div>
+                        <div>11pm</div>
+                    </div>
                     <div className="column"></div>
                     <div className="column"></div>
                     <div className="column"></div>

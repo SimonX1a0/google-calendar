@@ -1,3 +1,11 @@
+.dates{
+    min-width:80rem;
+    width: 90vw;
+    height: 100vh;
+    border: 3px solid black;
+    box-sizing: border-box;
+}
+
 .dates > .header{
     height: 10%;
     width: 100%;
@@ -7,15 +15,87 @@
 
 .dates .calendar{
     height:90%;
-    border-radius: 4rem;
+    border-radius: 2.5rem;
     background-color: rgb(207, 196, 196);
     box-sizing: border-box;
-    padding: 1rem 1rem;
+    padding: 0 1rem;
+    display:flex;
+    flex-direction: column;
+    overflow:scroll;
+    overflow-x: auto;
 }
 
 .dates .calendar .header{
-    width:100%;
-    padding: 1rem 2rem;
+    position: sticky;
+    top:0;
+    background-color: rgb(207, 196, 196);
+    width:auto;
+    margin: 0 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    border:1px solid black;
+    box-sizing: border-box;
+}
+
+.dates .calendar .header .time-zone{
+    background-color: rgb(207, 196, 196);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:5rem;
+    width:6%;
+    margin:0;
+    box-sizing: border-box;
+    border:1px solid black;
+}
+
+.dates .calendar .header .day{
+    background-color: rgb(207, 196, 196);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:5rem;
+    width:calc(94%/7);
+    margin:0;
+    box-sizing: border-box;
+    border:1px solid black;
+}
+
+.calendar .main{
+    display:flex;
+    margin: 0 2rem;
+    width:auto;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.calendar .main .axis{
+    border: 1px solid rgb(0, 0, 0);
+    width:6%;
+    height:auto;
+    box-sizing: border-box;
+}
+
+
+.calendar .main .column{
+    border: 1px solid rgb(0, 0, 0);
+    width:calc(94%/7);
+    height:auto;
+    box-sizing: border-box;
+}
+
+.calendar .main .axis div{
+    width:100%;
+    height:5rem;
+    text-align: center;
+    border:1px gray solid;
+    box-sizing: border-box;
+}
+
+.calendar .main .column div{
+    width:100%;
+    height:5rem;
+    text-align: center;
+    border:1px gray solid;
+    box-sizing: border-box;
 }

@@ -8,26 +8,6 @@ body{
     margin:0;
 }
 
-.calendar{
-    display: flex;
-}
-
-
-.side-bar{
-    min-width: 23rem;
-    width: 20vw;
-    height: 100vh;
-    box-sizing: border-box;
-}
-
-.side-bar-header{
-    height:10vh;
-}
-
-.dates{
-    min-width:80rem;
-    width: 90vw;
-    height: 100vh;
-    border: 3px solid black;
-    box-sizing: border-box;
+.calendar-app{
+    display:flex;
 }

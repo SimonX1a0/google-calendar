@@ -15,6 +15,13 @@
     box-sizing: border-box;
 }
 
+.side-bar{
+    min-width: 23rem;
+    width: 20vw;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
 .progress{
     width: 100%;
     min-height: 20rem;
