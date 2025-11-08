@@ -3,7 +3,7 @@
     top:0;
     background-color: rgb(207, 196, 196);
     width:auto;
-    height:5rem;
+    height:8rem;
     flex-shrink: 0;
     display: flex;
     justify-content: space-around;
@@ -13,14 +13,17 @@
 }
 
 .header .timeZone{
-    background-color: rgb(111, 57, 57);
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
-    height:5rem;
+    height:8rem;
     width:6%;
     margin:0;
     box-sizing: border-box;
+}
+
+.timeZone{
+    padding-bottom: 0.4rem;
 }
 
 .day{
@@ -29,20 +32,29 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height:5rem;
+    height:8rem;
     width:calc(94%/7);
     margin:0;
     box-sizing: border-box;
 }
 
-.day div{
-    height:70%;
+.dayText{
+    display: flex;
+    align-items: end;
+    height:2rem;
     box-sizing: border-box;
+}
 
+.date{
+    display: flex;
+    align-items:end;
+    height:4rem;
+    font-size: 2.4rem;
 }
 
 .caliber{
     box-sizing: border-box;
     width:100%;
-    height:30%;
+    height:2rem;
+    border-left: 1px black solid;
 }

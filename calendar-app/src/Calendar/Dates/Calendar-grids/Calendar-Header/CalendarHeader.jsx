@@ -7,13 +7,13 @@ function CalendarHeader(){
             <div className={style.timeZone}>
                 <span>GMT-05</span>
             </div>
-            <HeaderDay day="SUN"></HeaderDay>
-            <div className={style.day}>MON</div>
-            <div className={style.day}>TUE</div>
-            <div className={style.day}>WED</div>
-            <div className={style.day}>THU</div>
-            <div className={style.day}>FRI</div>
-            <div className={style.day}>SAT</div>
+            <HeaderDay day="SUN" date="5"></HeaderDay>
+            <HeaderDay day="MON" date="6"></HeaderDay>
+            <HeaderDay day="TUE" date="7"></HeaderDay>
+            <HeaderDay day="WED" date="8"></HeaderDay>
+            <HeaderDay day="THU" date="10"></HeaderDay>
+            <HeaderDay day="FRI" date="11"></HeaderDay>
+            <HeaderDay day="SAT" date="12"></HeaderDay>
         </div> 
     );
 }
