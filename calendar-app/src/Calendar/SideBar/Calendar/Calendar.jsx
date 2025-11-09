@@ -1,9 +1,10 @@
 import style from "./Calendar.module.css"
-function Calendar(){
+function Calendar(prop){
     let weekDays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = now.getMonth();
+    const currentDate = prop.currentDate;
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+    const monthText = new Date(year, month).toLocaleString("default", {month: "long"})
 
     const firstDay = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month+1 , 0).getDate();
@@ -20,11 +21,13 @@ function Calendar(){
         });
     }
 
+    const isCurrMonth = currentDate.getMonth() == new Date().getMonth();
+
     for(let i=1; i<=daysInMonth; i++){
         dates.push({
             day: i,
-            isCurrMon: true,
-            isCurrDay: (i == now.getDate()) ? true : false,
+            isCurrMon: (currentDate.getMonth() == new Date().getMonth()) ? true : false,
+            isCurrDay: (i == new Date().getDate() && isCurrMonth) ? true : false,
         });
     }
 
@@ -39,10 +42,10 @@ function Calendar(){
     return(
         <div className={style.calendar}>
             <div className={style.header}>
-                <div className={style.date}>{`November 2025`}</div>
+                <div className={style.date}>{`${monthText} ${year}`}</div>
                 <div className={style.btn}>
-                    <button className="left-btn btn"><i className='bx bx-chevron-left'></i></button>
-                    <button className="right-btn btn"><i className='bx bx-chevron-right'></i></button>
+                    <button className="left-btn btn" onClick={prop.preMonth}><i className='bx bx-chevron-left'></i></button>
+                    <button className="right-btn btn" onClick={prop.nextMonth}><i className='bx bx-chevron-right'></i></button>
                 </div>
             </div>
             <div className={style.grids}> 

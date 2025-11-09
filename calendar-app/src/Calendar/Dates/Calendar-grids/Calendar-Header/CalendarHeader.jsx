@@ -2,6 +2,13 @@ import style from "./CalendarHeader.module.css"
 import HeaderDay from "./HeaderDay.jsx"
 
 function CalendarHeader(){
+    const days = [];
+    const now = new Date();
+    const today = now.getDate();
+    const day = now.getDay();
+    for(let i=0; i<day; i++){
+        
+    }
     return(
         <div className={style.header}>
             <div className={style.timeZone}>
