@@ -1,0 +1,49 @@
+.calendar{
+    width: 25rem;
+    width: 25rem;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 1rem;
+}
+
+.date{
+    display:flex;
+    font-size: 1.6rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btns{
+    display: flex;
+}
+
+.grids{
+    width:auto;
+    margin: 1rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.1rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.daysTitle{
+    text-align: center;
+}
+
+.day{
+    margin: auto auto;
+    width: 80%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.day:hover{
+    background-color: aliceblue;
+    border-radius: 50%;
+}
+
