@@ -4,10 +4,10 @@ function DatesHeader(){
     return(
         <>
             <div className={style.header}>
-                <button>Today</button>
-                <i className='bx  bx-chevron-left'></i> 
-                <i className='bx  bx-chevron-right'></i> 
-                <span>November 2025</span>
+                <button className={style.today}>Today</button>
+                <i className={`bx  bx-chevron-left ${style.left}`}></i> 
+                <i className={`bx  bx-chevron-right ${style.right}`}></i> 
+                <span className={style.date}>{`November 2025`}</span>
             </div>
         </>
     );
