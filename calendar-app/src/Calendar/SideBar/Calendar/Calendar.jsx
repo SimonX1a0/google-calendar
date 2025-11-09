@@ -16,7 +16,7 @@ function Calendar(){
                 ))}
                   
                 {Array.from({length: 35}).map((_, i)=>(
-                    <div key="i" className={style.day}>{i+1}</div>
+                    <div key={i} className={style.day}>{i+1}</div>
                 ))}
             </div>
         </div>

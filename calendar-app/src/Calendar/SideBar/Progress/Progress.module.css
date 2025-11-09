@@ -1,0 +1,35 @@
+
+.progress{
+    width: 100%;
+    min-height: 20rem;
+    box-sizing: border-box;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.title{
+    font-size: 1.7rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    background-color: rgba(0,0,0,0);
+    border:none;
+    font-size: 2rem;
+}
+
