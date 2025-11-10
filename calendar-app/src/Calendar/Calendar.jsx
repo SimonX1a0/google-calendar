@@ -5,11 +5,9 @@ function Calendar(){
     const [currentDate, setCurrentDate] = useState(new Date());
     function preMonth(){
         setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1));
-        console.log("preMonth");
     }
     function nextMonth(){
         setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1));
-        console.log("nextMonth");
     }
     return(
         <>
