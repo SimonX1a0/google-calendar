@@ -1,22 +1,12 @@
 import style from "./CalendarHeader.module.css"
 import HeaderDay from "./HeaderDay.jsx"
 
-function CalendarHeader(prop) {
-  const currentDate = prop.currentDate || new Date(); // use prop or fallback
-  const today = currentDate.getDate();
-  const dayOfWeek = currentDate.getDay(); // 0 = Sunday, 6 = Saturday
-
-  // Find the Sunday of this week
-  const sunday = new Date(currentDate);
-  sunday.setDate(today - dayOfWeek);
+function CalendarHeader() {
 
   const days = [];
   for (let i = 0; i < 7; i++) {
-    const date = new Date(sunday);
-    date.setDate(sunday.getDate() + i);
-
-    const weekday = date.toLocaleString("default", { weekday: "short" }).toUpperCase();
-    const dayNum = date.getDate();
+    const weekday = new Date(2025, 11, i).toLocaleString("default", { weekday: "short" }).toUpperCase();
+    const dayNum = i;
 
     days.push({ weekday, dayNum });
   }
