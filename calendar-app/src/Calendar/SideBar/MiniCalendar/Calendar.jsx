@@ -44,7 +44,7 @@ function Calendar(prop){
             <div className={style.header}>
                 <div className={style.date}>{`${monthText} ${year}`}</div>
                 <div className={style.btn}>
-                    <button className="left-btn btn" onClick={prop.preMonth}><i className='bx bx-chevron-left'></i></button>
+                    <button className="left-btn btn" onClick={prop.lastMonth}><i className='bx bx-chevron-left'></i></button>
                     <button className="right-btn btn" onClick={prop.nextMonth}><i className='bx bx-chevron-right'></i></button>
                 </div>
             </div>

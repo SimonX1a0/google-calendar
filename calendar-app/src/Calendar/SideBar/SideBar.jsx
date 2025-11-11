@@ -1,23 +1,23 @@
 import style from "./SideBar.module.css"
 import Header from "./Header/Header.jsx"
-import Calendar from "./Calendar/Calendar.jsx"
+import Calendar from "./MiniCalendar/Calendar.jsx"
 import Progress from './Progress/Progress.jsx'
 
 function SideBar(prop){
-    const currentDate = prop.currentDate;
-    const preMonth = prop.preMonth;
-    const nextMonth = prop.nextMonth;
+    const currentDate = prop.miniDate;
+    const lastMonth = prop.lastMiniMonth;
+    const nextMonth = prop.nextMiniMonth;
     return(
         <>
             <div className={style.sideBar}>
                 <Header></Header>
                 <Calendar
                 currentDate={currentDate}
-                preMonth={preMonth}
+                lastMonth={lastMonth}
                 nextMonth={nextMonth}></Calendar>
                 <Progress
                 currentDate={currentDate}
-                preMonth={preMonth}
+                lastMonth={lastMonth}
                 nextMonth={nextMonth}></Progress>
             </div>
         </>

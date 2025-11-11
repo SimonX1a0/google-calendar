@@ -3,10 +3,12 @@ import CalendarHeader from "./Calendar-Header/CalendarHeader.jsx"
 import Axis from "./Calendar-Axis/Axis.jsx"
 import Column from "./Calendar-Columns/Column.jsx"
 
-function CalendarGrid(){
+function CalendarGrid(prop){
+    const currentDate = prop.currentDate;
     return(
         <div className={style.calendar}>
-                <CalendarHeader></CalendarHeader>
+                <CalendarHeader
+                currentDate={currentDate}></CalendarHeader>
                 <div className={style.main}>
                     <Axis></Axis>
                     <Column></Column>
