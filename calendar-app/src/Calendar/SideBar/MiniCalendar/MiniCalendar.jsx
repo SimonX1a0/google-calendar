@@ -1,4 +1,4 @@
-import style from "./Calendar.module.css"
+import style from "./MiniCalendar.module.css"
 function Calendar(prop){
     let weekDays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
     const currentDate = prop.currentDate;
