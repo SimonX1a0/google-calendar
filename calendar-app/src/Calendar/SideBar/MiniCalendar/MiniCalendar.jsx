@@ -3,6 +3,10 @@ import { use, useContext } from "react";
 import { CalendarContext } from "../../Calendar.jsx";
 function Calendar(){
     const ctx = useContext(CalendarContext);
+
+    const previewDate = ctx.previewDate;
+    const setPreviewDate = ctx.setPreviewDate;
+
     const miniDate = ctx.miniDate;
     const setMiniDate = ctx.setMiniDate;
     const year = miniDate.getFullYear();
@@ -17,6 +21,10 @@ function Calendar(){
     const nextMonth=()=>{
         const newDate=new Date(year,month+1,1);
         setMiniDate(newDate);
+    }
+
+    const changeMonth = (year, month, day)=>{
+        setPreviewDate(new Date(year, month, day));
     }
 
     let weekDays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
@@ -34,12 +42,16 @@ function Calendar(){
         const isCurrDay = currentDate.getDate() === new Date().getDate() 
         && currentDate.getMonth() === new Date().getMonth()
         && currentDate.getFullYear() === new Date().getFullYear();
+        const isPreviewDay = currentDate.getDate() === previewDate.getDate() 
+        && currentDate.getMonth() === previewDate.getMonth()
+        && currentDate.getFullYear() === previewDate.getFullYear();
 
         dates.push({
             day: currentDate.getDate(),
             isCurrMonth: isCurrMonth,
             isCurrDay: isCurrDay,
-            fullDate: currentDate
+            fullDate: currentDate,
+            isPreviewDay: isPreviewDay
         });
     }
 
@@ -60,7 +72,8 @@ function Calendar(){
                 {dates.map((day, i)=>(
                     <div 
                         key={i} 
-                        className={`${style.day} ${day.isCurrMonth ? style.currentMonth : style.otherMonth} ${day.isCurrDay ? style.today : ''}`}
+                        className={`${style.day} ${day.isCurrMonth ? style.currentMonth : style.otherMonth} ${day.isCurrDay ? style.today : ''} ${day.isPreviewDay && !day.isCurrDay? style.previewDay : ''}`}
+                        onClick={()=>changeMonth(day.fullDate.getFullYear(), day.fullDate.getMonth(), day.fullDate.getDate())}
                     >
                         {day.day}
                     </div>
