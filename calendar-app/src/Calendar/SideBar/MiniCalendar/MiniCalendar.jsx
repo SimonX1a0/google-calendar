@@ -25,6 +25,7 @@ function Calendar(){
 
     const changeMonth = (year, month, day)=>{
         setPreviewDate(new Date(year, month, day));
+        setMiniDate(new Date(year, month, day));
     }
 
     let weekDays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];

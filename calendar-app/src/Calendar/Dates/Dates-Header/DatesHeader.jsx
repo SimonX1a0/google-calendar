@@ -7,6 +7,8 @@ function DatesHeader(){
     const previewDate = ctx.previewDate;
     const setPreviewDate = ctx.setPreviewDate;
     const setMiniDate = ctx.setMiniDate;
+    const month = previewDate.toLocaleString("default", { month: "long" });
+    const year = previewDate.getFullYear();
 
     const today = ()=>{
         const now = new Date();
@@ -42,7 +44,7 @@ function DatesHeader(){
                     className={`bx  bx-chevron-right ${style.right}`}
                     onClick={nextWeek}
                 ></i> 
-                <span className={style.date}>{`November 2025`}</span>
+                <span className={style.date}>{`${month} ${year}`}</span>
             </div>
         </>
     );
