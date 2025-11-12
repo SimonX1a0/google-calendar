@@ -52,3 +52,10 @@
     border-radius: 50%;
 }
 
+.currentMonth{
+    color: black;
+}
+
+.otherMonth{
+    color: gray;
+}
