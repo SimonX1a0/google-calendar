@@ -1,16 +1,16 @@
 import style from "./Columns.module.css"
 import { useEffect, useState } from "react";
 function Column(props){
-
-    const now = new Date();
-    const hour = now.getHours();
-    const minute = now.getMinutes();
+    const [currentTime, setCurrentTime] = useState(new Date());
+    const hour = currentTime.getHours();
+    const minute = currentTime.getMinutes();
     const fraction = (minute / 60)*100;
 
     useEffect(() => {
         const interval = setInterval(() => {
             // Force re-render every minute to update the timeline position
             setCurrentTime(new Date());
+            console.log("updated time");
         }, 60000);
         return () => clearInterval(interval);
     })
