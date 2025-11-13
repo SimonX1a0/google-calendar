@@ -28,7 +28,7 @@ function CalendarHeader() {
         <span>{`GMT ${timezone>0 ? '-' : '+'} ${timezone}`}</span>
       </div>
       {days.map((d, i) => (
-        <HeaderDay key={i} day={d.weekday} date={d.dayNum} />
+        <HeaderDay key={i} day={d.weekday} date={d.dayNum} isToday={d.isToday}/>
       ))}
     </div>
   );

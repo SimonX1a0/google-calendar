@@ -8,9 +8,7 @@ function Column(props){
 
     useEffect(() => {
         const interval = setInterval(() => {
-            // Force re-render every minute to update the timeline position
             setCurrentTime(new Date());
-            console.log("updated time");
         }, 60000);
         return () => clearInterval(interval);
     })
