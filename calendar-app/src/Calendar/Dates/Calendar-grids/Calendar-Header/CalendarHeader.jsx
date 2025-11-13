@@ -20,10 +20,12 @@ function CalendarHeader() {
     days.push({ weekday, dayNum, isToday });
   }
 
+  const timezone = Math.floor(new Date().getTimezoneOffset()/60);
+
   return (
     <div className={style.header}>
       <div className={style.timeZone}>
-        <span>GMT-05</span>
+        <span>{`GMT ${timezone>0 ? '-' : '+'} ${timezone}`}</span>
       </div>
       {days.map((d, i) => (
         <HeaderDay key={i} day={d.weekday} date={d.dayNum} />

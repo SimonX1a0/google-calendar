@@ -19,13 +19,11 @@ function DatesHeader(){
     const nextWeek=()=>{
         setPreviewDate(new Date(previewDate.getFullYear(), previewDate.getMonth(), previewDate.getDate()+7));
         setMiniDate(new Date(previewDate.getFullYear(), previewDate.getMonth(), previewDate.getDate()+7));
-        console.log(previewDate);
     }
 
     const lastWeek=()=>{
         setPreviewDate(new Date(previewDate.getFullYear(), previewDate.getMonth(), previewDate.getDate()-7));
         setMiniDate(new Date(previewDate.getFullYear(), previewDate.getMonth(), previewDate.getDate()-7));
-        console.log(previewDate);
     }
 
 
