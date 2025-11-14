@@ -1,6 +1,10 @@
 import style from "./Progress.module.css"
 import Task from "./Task/Task.jsx"
+import { useContext } from "react";
+import { CalendarContext } from "../../Calendar.jsx";
 function Progress(){
+    const ctx = useContext(CalendarContext);
+    const taskList = ctx.taskList;
     return(
         <div className={style.progress}>
             <div className={style.header}>
@@ -8,8 +12,9 @@ function Progress(){
                 <button className={style.btn}><i className='bx bx-plus'></i></button>
             </div>
             <div className="progress-list">
-                <Task task="Running"></Task>
-                <Task task="Eating"></Task>
+                {taskList.map((task)=>(
+                    <Task key={task.id} task={task}/>
+                ))}
             </div>
         </div>
     )

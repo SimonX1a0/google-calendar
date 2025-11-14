@@ -26,6 +26,7 @@ function Column(props){
                         <div className={style.timeline_circle}></div>
                     </div>
                     : null}
+                    
                 </div>
             ))}
         </div>

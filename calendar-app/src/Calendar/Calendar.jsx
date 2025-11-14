@@ -12,6 +12,16 @@ function Calendar(){
         category:"Work",
         startTime:new Date(),
         totalTime:60,
+        intervals: [
+            {
+                start: new Date("2025-11-13T10:00:00"),
+                end: new Date("2025-11-13T11:15:00"),
+            },
+            {
+                start: new Date("2025-11-14T10:00:00"),
+                end: new Date("2025-11-14T11:15:00"),
+            }
+        ]
     }]);
     
     return(
