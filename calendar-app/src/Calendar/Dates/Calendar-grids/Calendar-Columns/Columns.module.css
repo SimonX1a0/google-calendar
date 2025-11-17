@@ -2,6 +2,7 @@
     width:calc(94%/7);
     height:auto;
     box-sizing: border-box;
+    position: relative;
 }
 
 
@@ -44,8 +45,12 @@
     z-index: 2;
 }
 
-.interval{
-    height:100px;
-    width:100px;
-    background-color: rgba(100, 149, 237, 0.8);
+.event{
+    position:absolute;
+    display:flex;
+    padding-left:1rem;
+    align-items: center;
+    width:11rem;
+    border-radius: 0.4rem;
+    box-sizing: border-box;
 }

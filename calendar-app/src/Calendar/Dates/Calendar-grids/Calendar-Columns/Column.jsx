@@ -27,24 +27,28 @@ function Column(props){
                         <div className={style.timeline_circle}></div>
                     </div>
                     : null}
-
-                    {
-                        list.map((interval, idx)=>{
-                            return(
-                            (interval.start.getHours() == num) ?
-                            <div 
-                                className="interval"
-                                key={idx}
-
-                            >
-                                event
-                            </div>
-                            : null);
-                        })
-                    }
-                    
                 </div>
             ))}
+            {
+                list.map((interval, idx)=>{
+                    let hour = interval.start.getHours();
+                    let minute = interval.start.getMinutes();
+                    let top = hour*5 + (minute/60)*5;
+                    let elpaseHour = interval.end.getHours() - interval.start.getHours();
+                    let elapseMinute = interval.end.getMinutes() - interval.start.getMinutes();
+                    let height = elpaseHour*5 + (elapseMinute/60)*5;
+                    return(<div 
+                        className={style.event} 
+                        key={idx}
+                        style={{top: `${top}rem`,
+                                height: `${height}rem`,
+                                backgroundColor: `${interval.color}`
+                            }}
+                        >
+                            {interval.title}
+                        </div>)
+                })
+            }
         </div>
     );
 }
