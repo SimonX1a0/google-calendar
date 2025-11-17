@@ -6,28 +6,27 @@ export const CalendarContext=createContext();
 function Calendar(){
     const [previewDate,setPreviewDate]=useState(new Date());
     const [miniDate,setMiniDate]=useState(new Date());
-    const [taskList,setTaskList]=useState([{
-        id:1,
-        title:"Sample Task",
-        category:"Work",
-        startTime:new Date(),
-        totalTime:60,
-        intervals: [
-            {
-                start: new Date("2025-11-13T10:00:00"),
-                end: new Date("2025-11-13T11:15:00"),
-            },
-            {
-                start: new Date("2025-11-14T10:00:00"),
-                end: new Date("2025-11-14T11:15:00"),
-            }
-        ]
-    }]);
+    const [intervalList,setIntervalList]=useState([
+        {
+            id: 1,
+            title: "example",
+            color: "#ff0000",
+            start: new Date(2025,11,10,9,0),
+            end: new Date(2025,11,10,10,30),
+        },
+        {
+            id: 2,
+            title: "task",
+            color: "#296c81ff",
+            start: new Date(2025,11,20,9,0),
+            end: new Date(2025,11,21,10,30),
+        }
+    ]);
     
     return(
         <>
             <div className="calendar-app">
-                <CalendarContext.Provider value={{previewDate,setPreviewDate,miniDate,setMiniDate,taskList,setTaskList}}>
+                <CalendarContext.Provider value={{previewDate,setPreviewDate,miniDate,setMiniDate,intervalList,setIntervalList}}>
                     <SideBar/>
                     <Dates/>
                 </CalendarContext.Provider>

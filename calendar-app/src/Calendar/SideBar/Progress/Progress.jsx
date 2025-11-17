@@ -4,7 +4,12 @@ import { useContext } from "react";
 import { CalendarContext } from "../../Calendar.jsx";
 function Progress(){
     const ctx = useContext(CalendarContext);
-    const taskList = ctx.taskList;
+    const taskList = [
+        {
+            id: 1,
+            title: "hello",
+        }
+    ];
     return(
         <div className={style.progress}>
             <div className={style.header}>

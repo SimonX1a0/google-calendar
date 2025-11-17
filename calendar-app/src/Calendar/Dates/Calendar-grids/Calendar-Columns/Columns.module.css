@@ -43,3 +43,9 @@
     box-sizing: border-box;
     z-index: 2;
 }
+
+.interval{
+    height:100px;
+    width:100px;
+    background-color: rgba(100, 149, 237, 0.8);
+}

@@ -5,6 +5,7 @@ function Column(props){
     const hour = currentTime.getHours();
     const minute = currentTime.getMinutes();
     const fraction = (minute / 60)*100;
+    const list = props.events;
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -26,6 +27,21 @@ function Column(props){
                         <div className={style.timeline_circle}></div>
                     </div>
                     : null}
+
+                    {
+                        list.map((interval, idx)=>{
+                            return(
+                            (interval.start.getHours() == num) ?
+                            <div 
+                                className="interval"
+                                key={idx}
+
+                            >
+                                event
+                            </div>
+                            : null);
+                        })
+                    }
                     
                 </div>
             ))}
