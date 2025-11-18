@@ -19,7 +19,7 @@ function Calendar(){
             title: "task",
             color: "#296c81ff",
             start: new Date(2025,11,17,9,30),
-            end: new Date(2025,11,17,9,45),
+            end: new Date(2025,11,17,18,0),
         }
     ]);
     

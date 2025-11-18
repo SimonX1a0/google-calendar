@@ -14,6 +14,52 @@ function Column(props){
         return () => clearInterval(interval);
     })
 
+    function renderEvents(eventList){
+        let sortedList = eventList.sort((a, b)=>(a.start - b.start));
+        const lanes = [];
+        for(let event of sortedList){
+            let placed = false;
+            for(let lane of lanes){
+                let last = lane[lane.length-1];
+                if(last.end <= event.start){
+                    lane.push(event);
+                    placed = true;
+                    break;
+                }
+            }
+            if(!placed) lanes.push([event]);
+        }
+
+        return sortedList.map((event)=>{
+            const laneIndex = lanes.findIndex(l => l.includes(event));
+            const laneCount = lanes.length;
+            const startMin = event.start.getHours() * 60 + event.start.getMinutes();
+            const endMin = event.end.getHours() * 60 + event.end.getMinutes();
+            const elapse = endMin - startMin;
+            return(
+                <div
+                    key={event.id}
+                    className={style.event}
+                    style={
+                        {
+                            display: 'flex',
+                            position: 'absolute',
+                            top: `${startMin/1440*100}%`,
+                            width: `${100 / laneCount}%`,
+                            height: `${elapse/1440*100}%`,
+                            left: `${(100 / laneCount) * laneIndex}%`,
+                            backgroundColor: [event.color]
+                        }
+                    }
+                >
+                    {event.title}
+                </div>
+            );
+        });
+    }
+
+
+
     let divs = Array.from({length: 24}, (_, i)=>i);
     return(
         <div className={style.column}>
@@ -29,26 +75,7 @@ function Column(props){
                     : null}
                 </div>
             ))}
-            {
-                list.map((interval, idx)=>{
-                    let hour = interval.start.getHours();
-                    let minute = interval.start.getMinutes();
-                    let top = hour*5 + (minute/60)*5;
-                    let elpaseHour = interval.end.getHours() - interval.start.getHours();
-                    let elapseMinute = interval.end.getMinutes() - interval.start.getMinutes();
-                    let height = elpaseHour*5 + (elapseMinute/60)*5;
-                    return(<div 
-                        className={style.event} 
-                        key={idx}
-                        style={{top: `${top}rem`,
-                                height: `${height}rem`,
-                                backgroundColor: `${interval.color}`
-                            }}
-                        >
-                            {interval.title}
-                        </div>)
-                })
-            }
+            {renderEvents(list)}
         </div>
     );
 }
