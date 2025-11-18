@@ -14,14 +14,14 @@
 
         useEffect(()=>{
             if(started){
-                timeID.current = setTimeout(()=>{
+                timeID.current = setInterval(()=>{
                     setElapsedTime(new Date() - startTime);
-                    updateInterval(startTime, {end: new Date()});
+                    updateInterval(startTime.getTime(), {end: new Date()});
                 }, 1000)
             }else{
-                clearTimeout(timeID.current);
+                clearInterval(timeID.current);
             }
-        });
+        },[startTime, started, updateInterval]);
 
         async function start(){
             let now = new Date();
