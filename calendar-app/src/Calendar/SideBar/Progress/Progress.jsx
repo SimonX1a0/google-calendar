@@ -8,6 +8,7 @@ function Progress(){
         {
             id: 1,
             title: "hello",
+            color: '#36b151ff',
         }
     ];
     return(

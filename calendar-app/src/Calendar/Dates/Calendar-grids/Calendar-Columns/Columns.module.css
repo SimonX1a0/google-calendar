@@ -50,8 +50,10 @@
     display:flex;
     padding-left:1rem;
     align-items: top;
-    padding-top: 5%;
     width:11rem;
     border-radius: 0.8rem;
     box-sizing: border-box;
+    min-height: 1rem;
+    font-size: 100%;
+    align-items: top;
 }

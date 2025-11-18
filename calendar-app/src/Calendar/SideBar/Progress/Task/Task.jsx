@@ -1,16 +1,73 @@
-import style from './Task.module.css'
+    import style from './Task.module.css'
+    import { useContext, useState, useEffect, useRef } from 'react'
+    import { CalendarContext } from '../../../Calendar';
+    function Task(props){
+        const ctx = useContext(CalendarContext);
+        const updateInterval = ctx.updateInterval
 
-function Task(props){
-    const task = props.task;
-    const title = task.title;
-    const totalTime = task.totalTime;
-    return(
-        <div className={style.task}>
-            <span className="start-btn"><i className={`bx bx-play ${style.play}`}></i></span>
-            <span className={style.title}>{title}</span>
-            <span className={style.time}>{`00:00`}</span>
-        </div>
-    )
-}
+        const task = props.task;
+        const title = task.title;
+        const timeID = useRef(null);
+        const [started, setStarted] = useState(false);
+        const [startTime, setStartTime] = useState(0);
+        const [elapsedTime, setElapsedTime] = useState(0);
 
-export default Task
+        useEffect(()=>{
+            if(started){
+                timeID.current = setTimeout(()=>{
+                    setElapsedTime(new Date() - startTime);
+                    updateInterval(startTime, {end: new Date()});
+                }, 1000)
+            }else{
+                clearTimeout(timeID.current);
+            }
+        });
+
+        async function start(){
+            let now = new Date();
+            setStartTime(now);
+            setStarted(true);
+
+            ctx.setIntervalList(prev =>
+                [...prev, 
+                    {
+                        id: now.getTime(),
+                        title: title,
+                        color: task.color,
+                        start: now,
+                        end: now
+                    }
+                ]
+            )
+        };
+
+        function stop(){
+            setStarted(false);
+            setElapsedTime(0);
+        }
+
+        let hour = Math.floor(elapsedTime /(1000 * 60 * 60)%24);
+        let minute = Math.floor(elapsedTime /(1000*60) % 60);
+        let second = Math.floor(elapsedTime/(1000)%60);
+
+        let textHour = String(hour).padStart(2,'0');
+        let textMinute = String(minute).padStart(2,'0');
+        let textSecond = String(second).padStart(2,'0');
+
+        
+        return(
+            <div className={style.task}>
+                {!started ? 
+                <span className="start-btn" onClick={start}><i className={`bx bx-play ${style.play}`}></i></span>
+                : <span className="pause-btn" onClick={stop}><i className={`bx bx-pause ${style.pause}`}></i></span>            
+                }
+                <span className={style.title}>{title}</span>
+                {hour>0?
+                <span className={style.time}>{`${textHour}:${textMinute}`}</span>:
+                <span className={style.time}>{`${textMinute}:${textSecond}`}</span>
+                }
+            </div>
+        )
+    }
+
+    export default Task

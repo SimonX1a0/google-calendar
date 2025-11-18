@@ -33,7 +33,9 @@ function CalendarGrid(){
                 <div className={style.main}>
                     <Axis></Axis>
                     {weekdays.map((day, i)=>{
-                        const list = intervals.filter((interval)=>(interval.start.getDate() == day.day.getDate()));
+                        const list = intervals.filter((interval)=>(interval.start.getFullYear() == day.day.getFullYear()
+                                                                && interval.start.getMonth() == day.day.getMonth()
+                                                                && interval.start.getDate() == day.day.getDate()));
                         return(
                             <Column key={i} day={day.day} isToday={day.isToday} events={list}></Column>
                         );
