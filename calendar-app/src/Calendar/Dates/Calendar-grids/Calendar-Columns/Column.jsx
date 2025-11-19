@@ -10,9 +10,10 @@ function Column(props){
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentTime(new Date());
-        }, 60000);
+            console.log("moved");
+        }, 1000);
         return () => clearInterval(interval);
-    })
+    }, [])
 
     function renderEvents(eventList){
         let sortedList = eventList.sort((a, b)=>(a.start - b.start));

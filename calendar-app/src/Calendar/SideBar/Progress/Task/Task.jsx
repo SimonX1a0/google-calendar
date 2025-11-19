@@ -13,14 +13,14 @@
         const [elapsedTime, setElapsedTime] = useState(0);
 
         useEffect(()=>{
-            if(started){
-                timeID.current = setInterval(()=>{
-                    setElapsedTime(new Date() - startTime);
-                    updateInterval(startTime.getTime(), {end: new Date()});
-                }, 1000)
-            }else{
-                clearInterval(timeID.current);
-            }
+            if(!started) return;
+            timeID.current = setInterval(()=>{
+                const now = new Date();
+                setElapsedTime(now - startTime);
+                updateInterval(startTime.getTime(), {end: now});
+            }, 1000)
+
+            return () => clearInterval(timeID.current);
         },[startTime, started, updateInterval]);
 
         async function start(){
