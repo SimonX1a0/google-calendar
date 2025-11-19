@@ -10,8 +10,7 @@ function Column(props){
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentTime(new Date());
-            console.log("moved");
-        }, 1000);
+        }, 60000);
         return () => clearInterval(interval);
     }, [])
 
@@ -22,7 +21,9 @@ function Column(props){
             let placed = false;
             for(let lane of lanes){
                 let last = lane[lane.length-1];
-                if(last.end <= event.start){
+                if(last.end <= event.start
+                    && event.start - last.start > 15*1000*60
+                ){
                     lane.push(event);
                     placed = true;
                     break;
