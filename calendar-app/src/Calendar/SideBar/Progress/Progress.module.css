@@ -120,7 +120,8 @@
     background-color: #8e64c6;
 }
 
-.colors span:hover{
+.colors span:hover,
+.colors span.selected{
     border: 2px solid rgb(175, 153, 153);
 }
 
