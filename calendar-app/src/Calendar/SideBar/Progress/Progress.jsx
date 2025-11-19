@@ -1,10 +1,9 @@
 import style from "./Progress.module.css"
 import Task from "./Task/Task.jsx"
 import AddTaskPage from './AddTaskPage.jsx'
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { CalendarContext } from "../../Calendar.jsx";
 function Progress(){
-    const ctx = useContext(CalendarContext);
     const taskList = [
         {
             id: 1,
@@ -12,12 +11,19 @@ function Progress(){
             color: '#36b151ff',
         }
     ];
+
+    const [show, setShow] = useState(true);
+
+    
     return(
         <div className={style.progress}>
             <div className={style.header}>
                 <span className={style.title}>Tasks</span>
-                <button className={style.btn}><i className='bx bx-plus'></i></button>
-                <AddTaskPage></AddTaskPage>
+                <button className={style.btn}
+                onClick={()=>setShow(true)}>
+                    <i className='bx bx-plus'></i>
+                </button>
+                <AddTaskPage show={show} setShow={setShow} list={taskList}></AddTaskPage>
             </div>
             <div className="progress-list">
                 {taskList.map((task)=>(
