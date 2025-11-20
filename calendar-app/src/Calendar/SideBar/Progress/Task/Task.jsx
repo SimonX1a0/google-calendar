@@ -23,7 +23,7 @@
             return () => clearInterval(timeID.current);
         },[startTime, started, updateInterval]);
 
-        async function start(){
+        function start(){
             let now = new Date();
             setStartTime(now);
             setStarted(true);
