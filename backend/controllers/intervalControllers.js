@@ -5,7 +5,7 @@ export async function createInterval(req, res){
         const interval = await Interval.create(req.body);
         res.status(201).json(interval);
     } catch (error) {
-        res.status(400).json({error: error.message})
+        res.status(400).json({error: error})
     }
 }
 
